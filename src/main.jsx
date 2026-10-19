@@ -179,6 +179,7 @@ function App() {
         <div className="section-heading reveal"><span className="section-index">05 — FORMAÇÃO & ESTUDOS</span><span className="section-note">APRENDER. APLICAR. REPETIR.</span></div>
         <div className="journey-grid"><div className="journey-title reveal"><h2>O caminho<br /><em>até aqui.</em></h2><p>Minha formação em tecnologia e os estudos que continuo levando para os projetos.</p></div><div className="timeline">
           <TimelineItem time="2022 — 2023" title="Gestão de Tecnologia da Informação" org="Ensino superior · Tecnólogo" badge="Concluído">Uma formação de dois anos que construiu minha base em tecnologia, sistemas e gestão.</TimelineItem>
+          <TimelineItem time="2023" title="Cibersegurança" org="Cisco" badge="Concluído">Curso de cibersegurança concluído em 2023, com certificado.</TimelineItem>
           <TimelineItem time="2023" title="SQL Database" org="Udemy" badge="Concluído">Estudos em bancos de dados SQL e aplicação dos conhecimentos em projetos de cadastro e gerenciamento de informações.</TimelineItem>
           <TimelineItem time="2024 — 2025" title=".NET Backend Developer" org="Balta.io" badge="Não concluído">Trilha de estudos em desenvolvimento backend com C# e .NET.</TimelineItem>
           <TimelineItem time="AGORA" title="Cloud, dados & inteligência artificial" org="Especialização e projetos pessoais">Aprofundamento em computação em nuvem, fluxos de dados e ferramentas de IA para apoiar o desenvolvimento e a evolução dos meus projetos.</TimelineItem>
