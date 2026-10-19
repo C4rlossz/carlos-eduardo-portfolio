@@ -26,6 +26,8 @@ Abra `http://localhost:3000`. Para gerar a versão de publicação, execute `npm
 
 Para adicionar um projeto, copie um item da lista `projects` em `src/content.js`, use um `id` exclusivo e altere nome, descrição, tecnologias e links. Os campos `filters` aceitam `backend`, `cloud` e `frontend`.
 
+Os cursos ficam nos itens `TimelineItem` em `src/main.jsx`. Para inserir um certificado, substitua `certificatePending` por `certificateUrl="URL_DO_CERTIFICADO"` no curso correspondente. Enquanto o endereço não é informado, a indicação é apenas um texto, sem link vazio.
+
 ## Publicar na Vercel
 
 Importe este repositório e use:

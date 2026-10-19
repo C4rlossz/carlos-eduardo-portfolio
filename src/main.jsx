@@ -179,7 +179,10 @@ function App() {
         <div className="section-heading reveal"><span className="section-index">05 — FORMAÇÃO & ESTUDOS</span><span className="section-note">APRENDER. APLICAR. REPETIR.</span></div>
         <div className="journey-grid"><div className="journey-title reveal"><h2>O caminho<br /><em>até aqui.</em></h2><p>Minha formação em tecnologia e os estudos que continuo levando para os projetos.</p></div><div className="timeline">
           <TimelineItem time="2022 — 2023" title="Gestão de Tecnologia da Informação" org="Ensino superior · Tecnólogo" badge="Concluído">Uma formação de dois anos que construiu minha base em tecnologia, sistemas e gestão.</TimelineItem>
-          <TimelineItem time="2023" title="Cibersegurança" org="Cisco" badge="Concluído">Curso de cibersegurança concluído em 2023, com certificado.</TimelineItem>
+          <TimelineItem time="2023" title="Introdução à Cibersegurança" org="Cisco Networking Academy" badge="Concluído" certificatePending>Curso de introdução à cibersegurança concluído em 2023, com certificado.</TimelineItem>
+          <TimelineItem time="2023" title="Ethical Hacker" org="Cisco Networking Academy" badge="Não concluído">Estudos de hacking ético e segurança cibernética.</TimelineItem>
+          <TimelineItem time="2023" title="English for IT 1" org="OpenEDG · Cisco Networking Academy" badge="Não concluído">Estudos de inglês aplicado à tecnologia da informação e à comunicação em ambientes de TI.</TimelineItem>
+          <TimelineItem time="2023" title="Conceitos Básicos de Rede" org="Cisco Networking Academy" badge="Não concluído">Curso de fundamentos de redes, parte da trilha de carreira de Técnico de Rede.</TimelineItem>
           <TimelineItem time="2023" title="SQL Database" org="Udemy" badge="Concluído">Estudos em bancos de dados SQL e aplicação dos conhecimentos em projetos de cadastro e gerenciamento de informações.</TimelineItem>
           <TimelineItem time="2024 — 2025" title=".NET Backend Developer" org="Balta.io" badge="Não concluído">Trilha de estudos em desenvolvimento backend com C# e .NET.</TimelineItem>
           <TimelineItem time="AGORA" title="Cloud, dados & inteligência artificial" org="Especialização e projetos pessoais">Aprofundamento em computação em nuvem, fluxos de dados e ferramentas de IA para apoiar o desenvolvimento e a evolução dos meus projetos.</TimelineItem>
@@ -194,8 +197,15 @@ function App() {
   </>;
 }
 
-function TimelineItem({ time, title, org, badge, children }) {
-  return <article className="timeline-item reveal"><span className="timeline-point" /><span className="mono timeline-time">{time}</span><div className="timeline-top"><h3>{title}</h3>{badge && <span className="timeline-badge">{badge}</span>}</div><span className="timeline-org">{org}</span><p>{children}</p></article>;
+function TimelineItem({ time, title, org, badge, certificateUrl, certificatePending = false, children }) {
+  return <article className="timeline-item reveal">
+    <span className="timeline-point" />
+    <span className="mono timeline-time">{time}</span>
+    <div className="timeline-top"><h3>{title}</h3>{badge && <span className="timeline-badge">{badge}</span>}</div>
+    <span className="timeline-org">{org}</span>
+    <p>{children}</p>
+    {certificateUrl ? <a className="timeline-certificate" href={certificateUrl} target="_blank" rel="noopener noreferrer"><FileCheck2 size={15} aria-hidden="true" /><span>Ver certificado</span><ExternalLink size={13} aria-hidden="true" /></a> : certificatePending ? <span className="timeline-certificate is-pending"><FileCheck2 size={15} aria-hidden="true" /><span>Certificado · link em breve</span></span> : null}
+  </article>;
 }
 
 function TalumePreview() {

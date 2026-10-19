@@ -154,3 +154,18 @@
   .skill-tags > span:hover { transform: none; }
   .project-card:hover .kanban-demo, .project-card:hover .finance-demo { transform: none; }
 }
+
+/* Certificate links and pending certificate notes in the education timeline. */
+.timeline-certificate {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--accent);
+  text-decoration: none;
+}
+.timeline-certificate.is-pending { color: var(--muted); }
+a.timeline-certificate:hover { text-decoration: underline; }
+a.timeline-certificate:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
