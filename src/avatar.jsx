@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createAvatarAnimation } from './avatarAnimation';
+import { useLanguage } from './i18n';
 
 const plates = { dark: '/avatar/carlos-dark.png', light: '/avatar/carlos-light.png' };
 
@@ -22,6 +23,7 @@ function loadImage(url) {
 // Animate the selected render without replacing Carlos's chosen appearance.
 // This is a canvas animation of a 3D render, not a rigged GLB model.
 export default function DeveloperAvatar({ theme, reduced }) {
+  const { t } = useLanguage();
   const hostRef = useRef(null);
   const canvasRef = useRef(null);
   const settingsRef = useRef({ theme, reduced });
@@ -121,7 +123,7 @@ export default function DeveloperAvatar({ theme, reduced }) {
   }, []);
 
   return <div className="avatar-host" ref={hostRef} data-theme={theme}>
-    {!ready && <img className="avatar-still" src={plates[theme]} width="1254" height="1254" alt="Carlos com piercing na sobrancelha, no notebook, com um café ao lado" fetchPriority="high" />}
-    <canvas ref={canvasRef} width="768" height="768" className={ready ? 'avatar-canvas ready' : 'avatar-canvas'} role="img" aria-label={`Avatar com piercing na sobrancelha, digitando no notebook, com vapor saindo do café. ${theme === 'dark' ? 'Tela ligada, com luz verde iluminando o rosto.' : 'Tela desligada, sem luz do notebook.'}`} />
+    {!ready && <img className="avatar-still" src={plates[theme]} width="1254" height="1254" alt={t('Carlos com piercing na sobrancelha, no notebook, com um café ao lado')} fetchPriority="high" />}
+    <canvas ref={canvasRef} width="768" height="768" className={ready ? 'avatar-canvas ready' : 'avatar-canvas'} role="img" aria-label={`${t('Avatar com piercing na sobrancelha, digitando no notebook, com vapor saindo do café.')} ${t(theme === 'dark' ? 'Tela ligada, com luz verde iluminando o rosto.' : 'Tela desligada, sem luz do notebook.')}`} />
   </div>;
 }

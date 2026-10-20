@@ -169,3 +169,32 @@
 .timeline-certificate.is-pending { color: var(--muted); }
 a.timeline-certificate:hover { text-decoration: underline; }
 a.timeline-certificate:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+
+/* Language control stays beside the theme switch at every screen size. */
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 6px;
+  min-width: 66px;
+  height: 43px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  transition: background .2s, border-color .2s;
+}
+.language-toggle:hover { background: var(--soft-accent); border-color: var(--accent); }
+.language-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 620px) {
+  .header-controls { gap: 7px; }
+  .language-toggle { min-width: 59px; height: 38px; padding: 0 8px; }
+}
+@media (max-width: 400px) {
+  .brand-word { display: none; }
+}
