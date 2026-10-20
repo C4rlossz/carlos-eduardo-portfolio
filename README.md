@@ -1,53 +1,38 @@
 # Carlos Eduardo — Portfólio
 
-Meu portfólio pessoal com projetos, experiência profissional, formação e contato. Desenvolvido com **React, Vite, JavaScript, CSS e animações em Canvas**, com ícones Lucide, temas claro e escuro e conteúdo em português e inglês.
+Meu portfólio pessoal reúne projetos, experiência profissional, formação e contato. A ideia é apresentar minha trajetória em desenvolvimento, cloud e dados em um site com identidade própria, movimento e interações.
 
-## Rodar no computador
+**[Acessar o portfólio](https://carlos-eduardo-portfolio-eight.vercel.app/)**
 
-Use Node.js 22.12 ou superior.
+## Tecnologias utilizadas
 
-```bash
-npm ci
-npm run dev
-```
-
-Abra `http://localhost:3000`. Para gerar a versão de publicação, execute `npm run build`.
-
-## Atualizar o portfólio
-
-| O que mudar | Arquivo |
+| Tecnologia | Aplicação no site |
 | --- | --- |
-| Projetos, experiências, tecnologias e links | `src/content.js` |
-| Textos de apresentação, seções e formação (português) | `src/main.jsx` |
-| Traduções para inglês | `src/translations.js` |
-| Preferência de idioma, metadados e tradução | `src/i18n.jsx` |
-| Cores, temas e layout | `src/styles.css` e `src/interactions.css` |
-| Imagens do avatar | `public/avatar/` |
-| Digitação e vapor do café | `src/avatarAnimation.js` |
-| Animação dos números binários | `src/binaryAnimation.js` |
+| React e JavaScript | Componentes, navegação e interações |
+| Vite | Ferramentas de desenvolvimento e geração da versão de produção |
+| HTML e CSS | Estrutura, layout responsivo, temas e efeitos visuais |
+| Canvas 2D | Animações do avatar e dos números binários |
+| Lucide React | Ícones da interface |
+| localStorage | Preferências de tema e idioma salvas no navegador |
+| Vercel | Hospedagem do portfólio |
 
-Para adicionar um projeto, copie um item da lista `projects` em `src/content.js`, use um `id` exclusivo e altere nome, descrição, tecnologias e links. Os campos `filters` aceitam `backend`, `cloud` e `frontend`.
+## Ideias e animações
 
-Os cursos ficam nos itens `TimelineItem` em `src/main.jsx`. Para inserir um certificado, substitua `certificatePending` por `certificateUrl="URL_DO_CERTIFICADO"` no curso correspondente. Enquanto o endereço não é informado, a indicação é apenas um texto, sem link vazio.
+A proposta visual conecta meu trabalho com programação a um ambiente de desenvolvimento animado:
 
-## Idiomas
+- **Números binários em movimento:** os dígitos descem pelo fundo, se espalham ao aproximar o mouse e retornam ao fluxo quando ele se afasta.
+- **Avatar com visual 3D:** uma composição animada em Canvas, com digitação no notebook e vapor saindo do café, iniciada automaticamente.
+- **Iluminação integrada ao tema:** no modo escuro, a tela do notebook acende e ilumina o rosto do personagem; no modo claro, ela fica apagada.
+- **Interações ao explorar:** elementos aparecem durante a rolagem, e cartões e botões respondem à passagem do mouse.
+- **Português e inglês:** o botão EN/PT alterna o conteúdo do site, mantendo a preferência para os próximos acessos.
+- **Layout responsivo:** a apresentação se adapta a computadores e celulares.
 
-O botão **EN / PT** no cabeçalho alterna todo o conteúdo sem recarregar a página. O idioma escolhido fica salvo no navegador, independentemente do tema. O português é o idioma inicial.
+## O que apresento
 
-Os textos em português são as chaves do dicionário `src/translations.js`. Ao adicionar ou alterar textos em `src/main.jsx` ou `src/content.js`, inclua a tradução correspondente nesse dicionário. Nas interfaces JSX, use `t("Texto em português")`; os dados de projetos, experiências e tecnologias são traduzidos a partir de `src/content.js`. Nomes próprios, IDs, filtros e links permanecem os mesmos.
+O site reúne meus projetos com C#, .NET, cloud, dados e frontend, além da minha experiência com e-commerce, computadores e servidores. Também compartilho minha formação, cursos e estudos em andamento.
 
-Para verificar as duas versões e a cobertura das traduções, execute `npm run check:languages`.
+## Em evolução
 
-## Publicar na Vercel
+Continuo atualizando o portfólio com novos projetos, conhecimentos e melhorias na apresentação e nas animações. Ele acompanha minha evolução profissional e as ideias que vou colocando em prática.
 
-Importe este repositório e use:
-
-- **Branch de produção:** `main`
-- **Framework:** Vite
-- **Instalação:** `npm ci`
-- **Build:** `npm run build`
-- **Diretório de saída:** `dist`
-
-O arquivo `vercel.json` já contém as configurações de build. Depois de conectar o repositório, os commits na branch `main` atualizam o site automaticamente.
-
-O portfólio não precisa de banco de dados nem de variáveis de ambiente.
+[GitHub](https://github.com/C4rlossz) · [LinkedIn](https://www.linkedin.com/in/carlos-eduardo-a8bb50268/)
