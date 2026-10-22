@@ -35,7 +35,7 @@ try {
     experience.contributions.forEach(requireTranslation);
   }
   for (const group of content.skills) [group.title, group.label].forEach(requireTranslation);
-  for (const file of ['src/main.jsx', 'src/avatar.jsx', 'src/i18n.jsx']) {
+  for (const file of ['src/main.jsx', 'src/MobilePreview.jsx', 'src/avatar.jsx', 'src/i18n.jsx']) {
     const source = await readFile(new URL(`../${file}`, import.meta.url), 'utf8');
     for (const match of source.matchAll(/\bt\((['"])((?:\\.|(?!\1).)*)\1\)/g)) requireTranslation(match[2]);
   }
@@ -58,7 +58,13 @@ try {
     assert(copy.includes(language === 'en' ? 'Not completed' : 'Não concluído'));
     assert(page.includes(language === 'en' ? 'Switch to Portuguese' : 'Mudar para inglês'));
     assert(page.includes('href="#experiencia"'));
-    assert.equal((page.match(/class="project-detail"/g) || []).length, 5);
+    assert.equal((page.match(/class="project-detail"/g) || []).length, content.projects.length);
+    assert(copy.includes('Mobile & Android'));
+    assert(copy.includes('Talumi'));
+    assert(copy.includes('CoffeeDev'));
+    assert.equal((page.match(/class="android-phone"/g) || []).length, 2);
+    const mobile = content.projects.filter(project => project.filters.includes('mobile'));
+    assert.deepEqual(mobile.map(project => project.repo), ['https://github.com/C4rlossz/Talumi', 'https://github.com/C4rlossz/CoffeeDev']);
     const localized = localizeContent(content.projects, language);
     for (let index = 0; index < localized.length; index++) {
       const project = localized[index];
@@ -79,7 +85,7 @@ try {
         if (portuguese !== translated && portuguese.length > 20) assert(!copy.includes(portuguese), `Portuguese text remains: ${portuguese}`);
       }
     }
-    console.log(`${language.toUpperCase()}: page, 5 project dialogs, courses and avatar labels verified`);
+    console.log(`${language.toUpperCase()}: page, ${content.projects.length} project dialogs, Android previews, courses and avatar labels verified`);
   }
   globalThis.localStorage = {
     getItem: () => { throw new Error('Storage blocked'); },

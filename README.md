@@ -29,7 +29,7 @@ A proposta visual conecta meu trabalho com programação a um ambiente de desenv
 
 ## O que apresento
 
-O site reúne meus projetos com C#, .NET, cloud, dados e frontend, além da minha experiência com e-commerce, computadores e servidores. Também compartilho minha formação, cursos e estudos em andamento.
+O site reúne meus projetos com C#, .NET, cloud, dados, frontend e Android com Kotlin, além da minha experiência com e-commerce, computadores e servidores. Também compartilho minha formação, cursos e estudos em andamento.
 
 ## Em evolução
 

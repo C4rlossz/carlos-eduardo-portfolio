@@ -3,6 +3,7 @@ import { Moon, Sun, Github, Linkedin, Menu, X, Code2, Cloud, Workflow, Database,
 import { profile, projects as projectData, skills as skillData, experiences as experienceData } from './content';
 import { localizeContent, useLanguage } from './i18n';
 import BinaryBackground from './BinaryBackground';
+import MobilePreview from './MobilePreview';
 import './styles.css';
 import './interactions.css';
 
@@ -145,11 +146,11 @@ function App() {
       <section className="projects-section section-pad" id="projetos">
         <div className="section-heading reveal"><span className="section-index">{t("02 — PROJETOS SELECIONADOS")}</span><a className="text-link" href={profile.github} target="_blank" rel="noopener noreferrer"><Github size={17} /> {t("Mais no GitHub")}</a></div>
         <div className="projects-intro reveal"><h2>{t("Ideias que viraram")} <em>{t("código.")}</em></h2><p>{t("Cada projeto é uma oportunidade de resolver um problema e aprender algo novo.")}</p></div>
-        <div className="project-filters reveal" role="group" aria-label={t("Filtrar projetos")}>{[['all', 'Todos'], ['backend', 'Backend & .NET'], ['cloud', 'Cloud & dados'], ['frontend', 'Frontend']].map(([key, name]) => <button key={key} aria-pressed={filter === key} className={filter === key ? 'selected' : ''} onClick={() => setFilter(key)}>{t(name)}</button>)}</div>
+        <div className="project-filters reveal" role="group" aria-label={t("Filtrar projetos")}>{[['all', 'Todos'], ['backend', 'Backend & .NET'], ['cloud', 'Cloud & dados'], ['frontend', 'Frontend'], ['mobile', 'Mobile & Android']].map(([key, name]) => <button key={key} aria-pressed={filter === key} className={filter === key ? 'selected' : ''} onClick={() => setFilter(key)}>{t(name)}</button>)}</div>
         <div className="project-grid">
           {visibleProjects.map(p => <article key={p.id} className={`project-card interactive-surface ${p.id === 'talume' && filter === 'all' ? 'featured' : ''}`} onPointerMove={trackSurface} onPointerLeave={resetSurface}>
-            <div className={`project-preview preview-${p.id}`} aria-label={`${t('Ilustração da interface de')} ${p.name}`}>
-              {p.id === 'talume' ? <TalumePreview /> : p.id === 'talumedoc' ? <DocPreview /> : p.id === 'kanban' ? <KanbanPreview /> : p.id === 'finance' ? <FinancePreview /> : <StudentPreview />}
+            <div className={`project-preview preview-${p.id}`} role="img" aria-label={`${t('Ilustração da interface de')} ${p.name}`}>
+              {p.filters.includes('mobile') ? <MobilePreview project={p.id} /> : p.id === 'talume' ? <TalumePreview /> : p.id === 'talumedoc' ? <DocPreview /> : p.id === 'kanban' ? <KanbanPreview /> : p.id === 'finance' ? <FinancePreview /> : <StudentPreview />}
               <span className="preview-label">{t("CONCEITO DE INTERFACE")}</span>
             </div>
             <div className="project-info"><div className="project-topline"><span>{p.category}</span><span className="mono">/{p.number}</span></div><h3>{p.name}<span className="project-period">.</span></h3><p>{p.description}</p><div className="tag-row">{p.tags.map(t => <span key={t}>{t}</span>)}</div><button className="project-detail" onClick={e => openProject(p, e)}>{t("Explorar projeto")} <ExternalLink size={17} /></button></div>

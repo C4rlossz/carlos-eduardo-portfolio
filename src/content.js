@@ -92,6 +92,41 @@ projects.push(
   },
 );
 
+projects.push(
+  {
+    id: 'talumi', number: '06', name: 'Talumi', category: 'Android & finanças pessoais',
+    tags: ['Kotlin', 'Jetpack Compose', 'SQLite', 'WorkManager'], filters: ['mobile'],
+    subtitle: 'Seu dinheiro, com clareza.',
+    description: 'Aplicativo Android para organizar contas, compromissos e investimentos, com relatórios mensais e registros financeiros salvos no aparelho.',
+    detail: 'Desenvolvi o Talumi para reunir a organização das finanças pessoais em uma interface nativa, mantendo o dinheiro disponível separado do patrimônio investido. O aplicativo combina controle de movimentações, agenda, salários recorrentes e relatórios por categoria.',
+    contributions: [
+      'Interface com Jetpack Compose e Material 3, com temas claro e escuro.',
+      'Gestão de contas, entradas, saídas, transferências, dívidas e acertos parciais.',
+      'Carteira de investimentos separada, com consultas opcionais de CDI e Selic pela API pública do Banco Central.',
+      'Relatórios mensais por categoria e processamento local de salários recorrentes com WorkManager.',
+      'Persistência em SQLite, backup e restauração JSON, com ViewModel e StateFlow para o estado da interface.',
+    ],
+    repo: 'https://github.com/C4rlossz/Talumi',
+    note: 'Projeto pessoal de portfólio. Os saldos são informados manualmente e os registros financeiros ficam no aparelho.',
+  },
+  {
+    id: 'coffeedev', number: '07', name: 'CoffeeDev', category: 'Android & experiência de cafeteria',
+    tags: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Firebase'], filters: ['mobile'],
+    subtitle: 'Café, código e boas ideias.',
+    description: 'Aplicativo Android de uma cafeteria fictícia, com cardápio, favoritos, carrinho, acompanhamento de pedidos e área administrativa.',
+    detail: 'Criei o CoffeeDev para explorar o fluxo completo de uma cafeteria: escolher um produto, montar o pedido, acompanhar o preparo e administrar o atendimento. A arquitetura MVVM separa a interface das implementações de dados, com uma variante local em SQLite e outra conectada ao Firebase.',
+    contributions: [
+      'Interface nativa com Jetpack Compose, temas claro e escuro e conteúdo em português, inglês e espanhol.',
+      'Cardápio com pesquisa, favoritos, carrinho e totais calculados em centavos.',
+      'Histórico e etapas dos pedidos, aprovação de contas e administração de preços e disponibilidade.',
+      'ViewModel, StateFlow e coroutines com abstração de repositório para as variantes de dados.',
+      'Persistência local com SQLite e SharedPreferences, além da integração opcional com Firebase Authentication e Cloud Firestore.',
+    ],
+    repo: 'https://github.com/C4rlossz/CoffeeDev',
+    note: 'Demonstração educacional com produtos e pedidos fictícios. A variante conectada depende da configuração do Firebase.',
+  },
+);
+
 export const skills = [
   { title: 'Backend & arquitetura', icon: 'code', label: 'Meu foco principal', items: ['C#', '.NET', 'APIs', 'Testes unitários', 'SOLID', 'Clean Code', 'MVVM'] },
   { title: 'Cloud & dados', icon: 'cloud', label: 'Da aplicação à infraestrutura', items: ['Docker', 'AWS', 'Azure', 'SQL', 'PostgreSQL', 'NoSQL', 'Supabase', 'Azure Data Studio'] },
